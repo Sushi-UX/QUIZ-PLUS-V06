@@ -1,6 +1,6 @@
 //
 //  SoundManager.swift
-//  Quiz Plus V5
+//  Quiz Plus V7
 //
 //  Created by Raymond Choy on 7/16/19.
 //  Copyright © 2019 thechoygroup. All rights reserved.
