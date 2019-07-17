@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     
     
+    
     func setCountdown() {
         seconds = 15
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(testcountdown), userInfo: nil, repeats: true)
@@ -139,17 +140,19 @@ class ViewController: UIViewController {
             setCountdown()
         }
     }
-    
-   func loadNextRound(delay seconds: Int) {
+  
+    func loadNextRound(delay seconds: Int) {
         // Converts a delay in seconds to nanoseconds as signed 64 bit integer
         let delay = Int64(NSEC_PER_SEC * UInt64(seconds))
         // Calculates a time value to execute the method given current time and delay
         let dispatchTime = DispatchTime.now() + Double(delay) / Double(NSEC_PER_SEC)
-        
         // Executes the nextRound method at the dispatch time on the main queue
         DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
             self.nextRound()
+            
         }
+  
+ 
     }
     
     // MARK: - Actions
@@ -165,7 +168,8 @@ class ViewController: UIViewController {
             if (sender === trueButton &&  correctAnswer == choices[0]) || (sender === falseButton && correctAnswer == choices[1]) || (sender === Question3 &&  correctAnswer == choices[2]) || (sender === Question4 &&  correctAnswer == choices[3]) {
                 trivia.correctQuestions += 1
                   questionField.text = "Correct!"
-                TimerCountdown.text = "\(seconds)"
+                // TimerCountdown.text = "\(seconds)"
+                TimerCountdown.text = String(format: "%.1f", seconds)
                 nextButton.isHidden = false
                 timer.invalidate()
                 myGameSound.loadCorrectSound()
