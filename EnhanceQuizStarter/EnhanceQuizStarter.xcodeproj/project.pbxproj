@@ -19,6 +19,7 @@
 		972A72BB2056F06C0059EF4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972A72B92056F06C0059EF4A /* LaunchScreen.storyboard */; };
 		972A72C32056F0E40059EF4A /* GameSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 972A72C22056F0E40059EF4A /* GameSound.wav */; };
 		FBF11E3F22DFDEA400B42F59 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF11E3E22DFDEA400B42F59 /* GameManager.swift */; };
+		FBF11E4122DFE1FF00B42F59 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF11E4022DFE1FF00B42F59 /* SoundPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		972A72BC2056F06C0059EF4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		972A72C22056F0E40059EF4A /* GameSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GameSound.wav; sourceTree = "<group>"; };
 		FBF11E3E22DFDEA400B42F59 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		FBF11E4022DFE1FF00B42F59 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				755A0E8622B2C04B0036BADF /* correct.wav */,
 				755A0E8422B2C0340036BADF /* wrong.wav */,
 				972A72C22056F0E40059EF4A /* GameSound.wav */,
+				FBF11E4022DFE1FF00B42F59 /* SoundPlayer.swift */,
 			);
 			path = EnhanceQuizStarter;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75E9E04F22B0A9A3007FBBF2 /* QuizManager.swift in Sources */,
+				FBF11E4122DFE1FF00B42F59 /* SoundPlayer.swift in Sources */,
 				FBF11E3F22DFDEA400B42F59 /* GameManager.swift in Sources */,
 				75E9E04D22B0A953007FBBF2 /* QuizObject.swift in Sources */,
 				972A72B32056F06C0059EF4A /* ViewController.swift in Sources */,

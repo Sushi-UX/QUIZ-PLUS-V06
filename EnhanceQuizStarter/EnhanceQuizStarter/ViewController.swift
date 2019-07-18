@@ -6,6 +6,8 @@
 //  Copyright © 2018 Treehouse. All rights reserved.
 //
 
+    //----------START OLD CODE
+/*
 import UIKit
 import GameKit
 
@@ -23,16 +25,54 @@ class ViewController: UIViewController {
     var allQuestions: QuizObject! = nil
     var seconds = 15.0
     var timer = Timer()
+    */
+    //----------END OLD CODE
+
+import UIKit
+import GameKit
+
+class ViewController: UIViewController {
     
+    // MARK: - Properties
+    
+    let roundDelay = 3    //delay between questions
+    var timerMax = 15
+    var questionsAsked = 1 {    //Purpose is to update the UI only
+        didSet { questionsAskedLabel.text = String(questionsAsked) }
+    }
+    var correctQuestions = 0 {  //Purpose is to update the UI only
+        didSet { correctAnswersLabel.text = String(correctQuestions) }
+    }
+    var timerCount = 15 {
+        didSet { timerOutputLabel.text = String(timerCount) }
+    }
+    
+    var buttons: [UIButton] = []                // Convenience collection
+    var resultImageViews: [UIImageView] = []    // Convenience collection
+    
+    var timer = Timer()
+    
+    let soundPlayer = SoundPlayer()
+    
+    //Create the game manager
+    let gameManager = GameManager()
+    
+    // For emphasiszing questionField font when providing results feedback to user
+    let questionFieldLargeFontSize: CGFloat = 30.0
+    let questionFieldStandardFontSize:CGFloat = 20.0
+    
+    // Duration for alpha transitions - answer buttons, play again button, results icons fading in/out etc
+    var animationDuration = 0.5
+
     // MARK: - Outlets
     
     @IBOutlet weak var questionField: UILabel!
-    @IBOutlet weak var trueButton: UIButton!
-    @IBOutlet weak var falseButton: UIButton!
-    @IBOutlet weak var Question3: UIButton!
-    @IBOutlet weak var Question4: UIButton!
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var button4: UIButton!
     @IBOutlet weak var playAgainButton: UIButton!
-    @IBOutlet var TimerCountdown: UILabel!
+    @IBOutlet weak var TimerOutputLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     
     
